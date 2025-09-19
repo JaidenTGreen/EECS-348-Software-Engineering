@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Update Page</title>
+</head>
+<body>
+  <h2>Change Paragraph Style</h2>
+  <p id="text">This is a paragraph whose style you can change.</p>
+
+  <label>Red: <input type="number" id="r" min="0" max="255"></label><br>
+  <label>Green: <input type="number" id="g" min="0" max="255"></label><br>
+  <label>Blue: <input type="number" id="b" min="0" max="255"></label><br>
+  <label>Border Width: <input type="number" id="border" min="0" max="20"></label><br>
+  <button onclick="updateCSS()">Apply</button>
+
+  <script>
+    function updateCSS() {
+      let r = document.getElementById("r").value;
+      let g = document.getElementById("g").value;
+      let b = document.getElementById("b").value;
+      let border = document.getElementById("border").value;
+      let color = "rgb(" + r + "," + g + "," + b + ")";
+      let p = document.getElementById("text");
+      p.style.color = color;
+      p.style.border = border + "px solid " + color;
+      p.style.width = "fit-content";
+    }
+  </script>
+</body>
+</html>
